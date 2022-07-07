@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #f2f2f2;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  font-size: 1em;
+  color: #000000;
+  max-width: 1200px;
+  background: white;
+  margin: auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: black;
+  padding-top: 1.5em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+p {
+  font-size: 0.85em;
+  font-weight: lighter;
+}
+
+/*Header*/
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 2.3em 0;
+}
+
+.logo {
+  margin-left: 5%;
+}
+
+.logo img {
+  display: block;
+}
+
+nav {
+  margin: 1.5em 0 0 5%;
+}
+
+header ul li {
+  display: inline;
+  padding: 0 1.4em 0 0;
+  font-size: 0.9em;
+}
+
+li a.active {
+  text-underline-offset: 0.25em;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+}
+
+/*Navbar link text decoration when hoover */
+#link-color-1:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.25em;
+  text-decoration-color: red;
+}
+#link-color-2:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.25em;
+  text-decoration-color: rgb(101, 83, 255);
+}
+#link-color-3:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.25em;
+  text-decoration-color: rgb(219, 255, 16);
+}
+#link-color-4:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.25em;
+  text-decoration-color: rgb(45, 196, 14);
+}
+
+/*CSS Grid on recipe-grid container*/
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.recipe {
+  width: 47vw;
+  margin: 0 auto 30px;
+}
+
+.recipe-image {
+  display: block;
+  width: 47vw;
+}
+
+.recipe-info {
+  margin-top: 13px;
+}
+
+.recipe-info p {
+  font-size: 0.85em;
+  font-weight: 100;
+  margin-top: 2px;
+}
+
+/*Media Query - screen larger then 600px*/
+
+@media screen and (min-width: 600px) {
+  .recipe-grid {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin-top: 54px;
+  }
+
+  .recipe {
+    width: 31vw;
+    margin: 0 auto 45px;
+  }
+
+  .recipe-image {
+    width: 31vw;
+  }
+
+  h1 {
+    padding-top: 3em;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-left: 2.3em;
+  }
+
+  nav {
+    align-self: center;
+    margin: 0 0.8em 0 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .recipe {
+    width: 370px;
+  }
+
+  .recipe-image {
+    width: 370px;
+  }
+}
+
+/*Footer*/
+
+footer {
+  background: #ffffff;
+  padding: 3em;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.7em;
+  font-weight: 500;
+  color: black;
+  line-height: 130%;
+}
+
+footer img {
+  padding: 0.4em 0 1.3em 0;
+}
+
+/* Button */
+
+.btn {
+  color: white;
+  background-color: red;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  border: 1px solid red;
+}
+
+.container-btns {
+  height: 80px;
+  position: relative;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.filter-btn {
+  color: white;
+  background-color: rgb(33, 215, 33);
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  margin: 0.6rem;
+  border: 1px solid rgb(33, 215, 33);
+}
+
+.recipe img {
+  width: 100%;
+  display: block;
+  height: 450px;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+.recipe:hover img {
+  transform: scale(1.05);
+  filter: none;
+}
