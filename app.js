@@ -20,10 +20,13 @@ const showRecipe = async (url) => {
 
   // display recipies
   const section = await displayRecipies(data);
-  console.log(section);
+  // console.log(section);
 };
 
 showRecipe(url);
+
+//  create meal category, then buttons
+const recipeCategory = '';
 
 const displayRecipies = ({ meals }) => {
   const section = get('.recipe-grid');
@@ -35,13 +38,15 @@ const displayRecipies = ({ meals }) => {
   }
   const newMeals = meals
     .map((meal) => {
-      console.log(meal);
+      // console.log(meal);
       const {
         idMeal: id,
         strCategory: category,
         strMeal: name,
         strMealThumb: image,
       } = meal;
+
+      const recipeCategory = meal.strCategory;
       return `<a href="./przepisy.html" class="recipe" data-id="${id}">
           <img
             class="${name}"
@@ -60,6 +65,23 @@ const displayRecipies = ({ meals }) => {
   section.innerHTML = newMeals;
   return section;
 };
+
+// console.log(recipeCategory);
+
+/*
+const displayButtons = ({ meals }) => {
+  const containerBtns = get('.container-btns');
+  const filterBtns = get('.filter-btn');
+
+  const newButtons = meals.map((meal) => {
+    const { idMeal: id, strCategory: category } = meal;
+    return category;
+  });
+};
+
+displayButtons();
+console.log(category);
+*/
 
 // //  get data form URL as JSON
 // const fetchRecipies = async (url) => {
@@ -97,4 +119,4 @@ const displayRecipies = ({ meals }) => {
 
 //  and then create filters...buttons, maybe search
 
-//  and create single recipe site
+//  and create single recipe sitlo
