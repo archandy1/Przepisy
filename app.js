@@ -26,7 +26,7 @@ const showRecipe = async (url) => {
 showRecipe(url);
 
 //  create meal category, then buttons
-const recipeCategory = '';
+let recipeCategory = [];
 
 const displayRecipies = ({ meals }) => {
   const section = get('.recipe-grid');
@@ -46,7 +46,9 @@ const displayRecipies = ({ meals }) => {
         strMealThumb: image,
       } = meal;
 
-      const recipeCategory = meal.strCategory;
+      // push category to empty array !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      recipeCategory.push(category);
+      // const recipeCategory = meal.strCategory;
       return `<a href="./przepisy.html" class="recipe" data-id="${id}">
           <img
             class="${name}"
@@ -65,23 +67,33 @@ const displayRecipies = ({ meals }) => {
   section.innerHTML = newMeals;
   return section;
 };
+// get unique values and create buttons
+function printBtn() {
+  const unique = ['all', ...new Set(recipeCategory)];
+  return unique;
+}
+console.log(printBtn(recipeCategory));
 
+//  check if category works
 // console.log(recipeCategory);
+// console.log(recipeCategory[0]);
 
-/*
-const displayButtons = ({ meals }) => {
-  const containerBtns = get('.container-btns');
-  const filterBtns = get('.filter-btn');
+// create function that takes category of meal and turns it into button
 
-  const newButtons = meals.map((meal) => {
-    const { idMeal: id, strCategory: category } = meal;
-    return category;
-  });
-};
-
-displayButtons();
-console.log(category);
-*/
+// function getUniqueArray(_array) {
+//   var obj = {};
+//   var uniqueArray = [];
+//   for (var i = 0; i < _array.length; i++) {
+//     if (obj[_array[i]] == undefined) {
+//       // add the array elements to object , where the element is key and the same element is value
+//       // keys of the object can only have unique values
+//       obj[_array[i]] = i;
+//       // add the keys of the object to a new array as elements of the array
+//       uniqueArray.push(_array[i]);
+//     }
+//   }
+//   return uniqueArray;
+// }
 
 // //  get data form URL as JSON
 // const fetchRecipies = async (url) => {
